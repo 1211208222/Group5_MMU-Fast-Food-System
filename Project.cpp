@@ -1357,6 +1357,7 @@ void registration() {
     while (true) {
         cout << "\n \t Enter [88] to go back to the main login page: ";
         cout << "\n \t Enter username: ";
+        cin.ignore();
         getline(cin, ruser_Id);
 
         if (ruser_Id == "88") {
