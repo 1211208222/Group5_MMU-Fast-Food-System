@@ -1,9 +1,13 @@
 
-Ayam Goreng Spicy
-8
-1
-8
-Ayam Goreng Regular
-8
+5pcs Ayam Goreng Regular
+28
 2
-16
+56
+Ayam Goreng Mixed
+14.5
+2
+29
+Cheese Burger
+10.5
+1
+10.5

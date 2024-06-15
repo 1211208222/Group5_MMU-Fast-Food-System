@@ -636,7 +636,7 @@ void addToCart(const Food& food) {
 			        	break;
 			        case 4:
 			            system("CLS");
-			            burger(); // Call the burger function to add another item
+			            food(); // Call the food function to add another item
 			            break;
 			        case 5:
 			            system("CLS");
@@ -872,7 +872,7 @@ void sortPrice() {
     cout << "The price for the menu already sorted low to high!" << endl;
      getche();
     system("cls");
-    burger();
+    food();
 }
 void sortAlphabet() {//selection sort
     int i = 0;
@@ -918,7 +918,7 @@ void sortAlphabet() {//selection sort
     }
     getche();
     system("cls");
-    burger();
+    food();
 }
 
 
@@ -933,7 +933,7 @@ void sortmenu() {
 
     if (sortchoice == 0) {
         system("cls");
-        burger();
+        food();
         return; // Exit function if the user chooses to return
     }
 
@@ -952,7 +952,7 @@ void sortmenu() {
     }
 }
 	
-	void burger() {
+	void food() {
     int i = 0;
     int c = 0;
     ifstream menu("menu.txt");
@@ -1008,21 +1008,21 @@ void sortmenu() {
             case 1:
                 searchProduct();
                 system("cls");
-                burger();
+                food();
                 break;
             case 2:
                 sortmenu();
                 break;
             case 3:
 
-                cout << "\n\t\t\tEnter the Burger No [0 return back]: ";
+                cout << "\n\t\t\tEnter the Fast-Food No [0 return back]: ";
                 cin >> item;
                 fflush(stdin);
                 cin.clear();
 
                 if (item == 0) {
                     system("cls");
-                    burger();
+                    food();
                 }
 
                 while (item < 1 || item > i) {
@@ -1256,7 +1256,7 @@ void mainpage(){
 			break;
 		case 2:
 			system("cls");
-			m.burger();
+			m.food();
 			break;
 		case 3:
 			system("cls");
@@ -1349,7 +1349,7 @@ void registration() {
     system("cls");
 
     string ruser_Id, r_password, confirm_password;
-    cout << "\t ________________________________________________________________\n\n";
+    cout << "\t ________________________________________________________________\n";
     cout << "\t|                                                                |\n";
     cout << "\t|                          Register page                         |\n";
     cout << "\t|________________________________________________________________|\n\n";
@@ -2355,7 +2355,7 @@ void adminlogin()
     {
         cout << "\t ________________________________________________________________\n";
         cout << "\t|                                                                |\n";
-        cout << "\t|                    Welcome to Admin menu                       |\n";;
+        cout << "\t|                    Welcome to Root Admin menu                  |\n";;
         cout << "\t|________________________________________________________________|\n";
         cout << "\t| 1. View Purchase History                                       |" << endl;
         cout << "\t| 2. View Menu                                                   |" << endl;

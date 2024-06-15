@@ -1,55 +1,55 @@
 
-Ayam Goreng Spicy
-8.00
-Ayam Goreng Regular
-8.00
-Ayam Goreng Mixed
-14.50
-5pcs Ayam Goreng Spicy
-28.00
 5pcs Ayam Goreng Regular
-28.00
-Nasi Lemak + Ayam Goreng
-13.50
-Nasi Lemak + 2pcs Ayam Goreng
-16.50
-Chicken Burger
-9.50
-Double Chicken Burger
-14.00
-Spicy Tomato Chicken Warp
-12.50
-Spicy Chicken Burger
-11.00
+28
+5pcs Ayam Goreng Spicy
+28
+Ayam Goreng Mixed
+14.5
+Ayam Goreng Regular
+8
+Ayam Goreng Spicy
+8
 Beef Burger
-15.00
+15
 Cheese Burger
-10.50
-Double Cheese Burger
-13.50
-Spicy Chicken Deluxe Burger
-14.00
-Crispy Chicken Burger
-12.00
-Fish Burger
-14.50
-Chicken Nugget
-10.00
+10.5
 Cheese Wedges
-9.50
-Golden Egg Tart
-4.50
-Loaded Potato Bowl
-9.00
-Popcorn Chicken
-13.00
+9.5
+Chicken Burger
+9.5
+Chicken Nugget
+10
 Coca - Cola
-6.50
-Sprite
-6.50
+6.5
+Crispy Chicken Burger
+12
+Double Cheese Burger
+13.5
+Double Chicken Burger
+14
 Fanta Strawberry
-6.50
-Iced Milo
-8.50
+6.5
+Fish Burger
+14.5
+Golden Egg Tart
+4.5
 Iced Lemon Tea
-8.00
+8
+Iced Milo
+8.5
+Nasi Lemak + 2pcs Ayam Goreng
+16.5
+Nasi Lemak + Ayam Goreng
+13.5
+Popcorn Chicken
+13
+Spicy Chicken Burger
+11
+Spicy Chicken Deluxe Burger
+14
+Spicy Tomato Chicken Warp
+12.5
+Sprite
+6.5
+Spaghetti
+10.5
