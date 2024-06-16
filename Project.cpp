@@ -27,8 +27,6 @@ struct AddOn {
     AddOn* next;
 };
 
-
-
 struct Node {
     string admin_id;
     string admin_name;
@@ -36,9 +34,6 @@ struct Node {
     string admin_pw;
     Node* next;
 };
-
-
-
 
 struct Food{
 	string foodName,name,username;
@@ -52,7 +47,6 @@ struct Product {
     float price;
     Product* next;
 };
-
 
 struct main_menu
 {
@@ -219,12 +213,28 @@ class Menu:public Receipt{
 	private:
 		int item,qty,choice;
 		Food* cartHead;
+		string itemName;
+    	float itemPrice;
 	public:
 		
 		Menu() {
 			cartHead = NULL; 
 		}
 		
+		Menu(string name, float price) : itemName(name), itemPrice(price) {}
+
+	    void displayItem() {
+	        cout << "Item: " << itemName << ", Price: RM " << fixed << setprecision(2) << itemPrice << endl;
+	    }
+	
+	    string getName() const {
+	        return itemName;
+	    }
+	
+	    float getPrice() const {
+	        return itemPrice;
+	    }
+			
 		void viewpurchase(){
 			int i=0;
 			float grand_total=0;
@@ -874,6 +884,7 @@ void sortPrice() {
     system("cls");
     food();
 }
+
 void sortAlphabet() {//selection sort
     int i = 0;
     main_menu x[100];
@@ -920,7 +931,6 @@ void sortAlphabet() {//selection sort
     system("cls");
     food();
 }
-
 
 void sortmenu() {
     int sortchoice;
@@ -1058,8 +1068,84 @@ void sortmenu() {
 }
 };
 
+// Class for user management
+class User {
+private:
+    string username;
+    string password;
 
+public:
+    User(string uname, string pwd) : username(uname), password(pwd) {}
 
+    string getUsername() const {
+        return username;
+    }
+
+    string getPassword() const {
+        return password;
+    }
+};
+
+// Admin inherits from User
+class Admin : public User {
+private:
+    string adminID;
+
+public:
+    Admin(string uname, string pwd, string id) : User(uname, pwd), adminID(id) {}
+
+    string getAdminID() const {
+        return adminID;
+    }
+};
+
+// Customer inherits from User
+class Customer : public User {
+private:
+    string customerID;
+
+public:
+    Customer(string uname, string pwd, string id) : User(uname, pwd), customerID(id) {}
+
+    string getCustomerID() const {
+        return customerID;
+    }
+};
+
+// Order inherits from Menu
+class Order : public Menu {
+private:
+    int quantity;
+
+public:
+    Order(string name, float price, int qty) : Menu(name, price), quantity(qty) {}
+
+    int getQuantity() const {
+        return quantity;
+    }
+
+    float getTotalPrice() const {
+        return getPrice() * quantity;
+    }
+};
+
+// Friend function for comparing admin data
+bool compareAdminData(const Admin& admin, const string& key) 
+{
+    return admin.getUsername() == key; // Compare based on username for simplicity
+}
+
+// Friend function
+void friendFunction1(const User& user) 
+{
+    cout << "Friend Function 1 accessing User: " << user.getUsername() << endl;
+}
+
+// Friend function
+void friendFunction2(const Menu& menu) 
+{
+    cout << "Friend Function 2 accessing Menu: " << menu.getName() << endl;
+}
 
 void dl()
 {
@@ -1067,6 +1153,7 @@ void dl()
 	cout<<"=";
 	cout<<endl;
 }
+
 void sp()
 {
 	cout<<endl;
@@ -1100,8 +1187,6 @@ void viewmenu()
 	menu.close();
 	sp();
 }
-
-
 
 void viewhistory()
 {	int i=0;
@@ -1162,7 +1247,7 @@ void viewhistory()
     cout << "\n\nPress any key to continue" << endl;
     getche();
 }
-//brian
+
 void LoginHome(){
 	int c;
 	cout<<"\t ________________________________________________________________\n";
@@ -1215,8 +1300,6 @@ void LoginHome(){
 			
 	}
 }
-
-
 
 void mainpage(){
 	Menu m;
@@ -1277,7 +1360,6 @@ void mainpage(){
 			break;
 	}
 }
-
 
 void login() {
     int attempts = 0;
@@ -1344,7 +1426,6 @@ void login() {
     }
 }
 
-
 void registration() {
     system("cls");
 
@@ -1409,7 +1490,9 @@ void registration() {
     } else {
         cout << "\t Error opening file." << endl;
     }
-}void forgot() {
+}
+
+void forgot() {
     cout << "\t ________________________________________________________________\n\n";
     cout << "\t|                                                                |\n";
     cout << "\t|                        Forgot Password                         |\n";
@@ -1516,7 +1599,6 @@ void registration() {
     }
 }
 
-
 void userprofile() {
     char num;
 
@@ -1602,9 +1684,8 @@ cout<<"\n\t\t        -------------------------";
 Sleep(600);
 }
 
-
 void addadmin()//Linked list
- {
+{
     Node* head = NULL; 
     Node* tail = NULL; 
 
@@ -1724,10 +1805,6 @@ void addadmin()//Linked list
     getche();
     system("cls");
 }
-
-
-
-
 
 void showAdminList() //Display admin list
 {
@@ -1933,9 +2010,6 @@ void deleteadmin()
         return;
     }
 
-    
-   
-
 	while (!adminFile.eof())
 	{
 	    string line;
@@ -1981,7 +2055,6 @@ void deleteadmin()
     cout << "Press any key to continue..." << endl;
     getche();
 }
-
 
 void sort_admin_by_ID() // Bubble sort
 {
@@ -2030,7 +2103,6 @@ void sort_admin_by_ID() // Bubble sort
     system("cls");
 }
 
-
 void sort_admin_by_name() // Bubble sort
 {
     int i = 0;
@@ -2076,10 +2148,6 @@ void sort_admin_by_name() // Bubble sort
     system("pause");
     system("cls");
 }
-
-
-
-
 
 void search_admin()//Linear search
 {
@@ -2212,9 +2280,8 @@ void forgotPassword()
 
     adminFile.close();
 }
-
 	
-	void adminLoginPage()
+void adminLoginPage()
 {
 	int choice;
 	cout<<"\t ________________________________________________________________\n";
@@ -2241,9 +2308,6 @@ void forgotPassword()
 		cin.clear();
 	}
 	
-
-	
-	
 	switch(choice)
 	{
 		case 1:
@@ -2262,7 +2326,6 @@ void forgotPassword()
 			
 	}
 }		
-		
 
 void adminlogin()
 {
@@ -2345,9 +2408,9 @@ void adminlogin()
     }
 }
 
- void rootAdminFunctionality()
- {
- int adminID, adminchoice, back, adc, c;
+void rootAdminFunctionality()
+{
+    int adminID, adminchoice, back, adc, c;
     int prochoice, adchoice;
     string adminid, adminnum, adminname;
 
@@ -2534,9 +2597,6 @@ void adminlogin()
     } while (c != 5);
 }	
 
-
-
-
 void adminmainpage()
 {
     int adminID, adminchoice, back, adc, c;
@@ -2663,8 +2723,6 @@ void adminmainpage()
     } while (c != 5);
 }
 
-
-
 void viewmenus()
 {
  
@@ -2731,7 +2789,6 @@ void viewmenus()
     }
 }
 
-
 void addBurger() {
     ofstream add;
     add.open("menu.txt", ios::app);
@@ -2775,7 +2832,6 @@ void addBurger() {
     getche();
     viewmenus();
 }
-
 
 void editBurger()
 {
@@ -3018,7 +3074,6 @@ void deleteBurger()
     }
 }
 
-
 void sortmenu()
 {
 	int sortchoice;
@@ -3107,7 +3162,6 @@ void sortbyname() {//selection sort
        viewmenus(); 
  
 }
-
 
 void sortbyprice() {
     int i = 0;
@@ -3386,5 +3440,13 @@ void admin_customer()
 int main() {
    
 	admin_customer();
+	
+	// Creating instances of Admin and Menu
+    Admin adminUser("admin1", "admin123", "A123");
+    Menu menuItem("Burger", 10.50);
+	
+	// Testing friend functions
+    friendFunction1(adminUser); // Accessing User details via friend function
+    friendFunction2(menuItem); // Accessing Menu details via friend function
     return 0;
 }
